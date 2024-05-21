@@ -2,6 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "20.11.1"
+  },
   "scripts": {
     "dev": "tsx watch --env-file .env src/server.ts",
     "build": "tsup src",
@@ -20,6 +23,7 @@
     "@fastify/cors": "^9.0.1",
     "@prisma/client": "^5.14.0",
     "fastify": "^4.27.0",
+    "tsup": "^8.0.2",
     "tsx": "^4.10.5"
   }
 }
