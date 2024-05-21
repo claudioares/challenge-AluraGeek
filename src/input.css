@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 12rem; 
+    height: 21rem;
+    background-color: rgb(17, 92, 116);
+    padding: 0.2rem;
+    border-radius: 1rem;
+    color: beige;
+}
+.product__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 12rem;
+
+    padding:0.2rem;
+    border-radius: 1rem 1rem 0 0;
+
+    background-color: rgb(255, 255, 255);
+}
+.product__image img {
+    height: 10rem;
+    object-fit: cover;
+}
+.info__products {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding: 0.5rem;
+}
+.product__name {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.inform_product{
+    font-size: small;
+    font-style: italic;
+}
+.description__ {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+.info__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.price__ {
+    display: flex;
+    padding: 0.5rem;
+    color: rgb(243, 206, 41);
+}
+.image__trash {
+    display: flex;
+    padding: 0.5rem;
+    width: 2rem;
+
+    cursor: pointer;
+}
+.image__trash:hover {
+    opacity: 0.8;
+}
