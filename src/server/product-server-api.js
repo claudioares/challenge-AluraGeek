@@ -1,12 +1,12 @@
 export class MethodsProductApi {
     async GETApiServer () {
-        return await fetch('http://localhost:3333/listproducts')
+        return await fetch('https://challenge-alurageek-api.onrender.com/listproducts')
             .then(res=>res.json())
             .catch(erro=>console.log(erro))
     };
 
     async POSTApiServer (productsData) {
-        return await fetch('http://localhost:3333/createproducts', {
+        return await fetch('https://challenge-alurageek-api.onrender.com/createproducts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
