@@ -21,7 +21,7 @@ export class CreatedCardProducts {
             <div class="info__products">
                 <h1 class="product__name">${title}</h1>
 
-                <p class="description__">${description.split(' ').slice(0, 5).join(' ').concat('...')}</p>
+                <p class="description__">${description.split(' ').slice(0, 9).join(' ').concat('...')}</p>
 
                 <div class="info__container">
                     <div class="price__">
@@ -36,6 +36,7 @@ export class CreatedCardProducts {
         `
 
         productContainer?.appendChild(cardProduct);
+
         cardProduct.addEventListener('click', async (event)=> {
             if (event.target.classList.contains('trash__icon')) {
                 event.preventDefault();
@@ -43,9 +44,9 @@ export class CreatedCardProducts {
 
                 // deletando o produto
                 await repositorie.DELETEApiServer(id);
-
-                return 
             }
+            location.reload();
+            return 
         });
 
         return productContainer;

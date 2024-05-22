@@ -28,7 +28,7 @@ sendButton.addEventListener("click", (e)=>{
 
 async function postProductsData (values) {
     const methodsProductsApi = new MethodsProductApi();
-    const postProductsRepository = await methodsProductsApi.POSTApiServer(
+    await methodsProductsApi.POSTApiServer(
         {
             title: values[0],
             price: values[1],
@@ -37,5 +37,5 @@ async function postProductsData (values) {
         }
     )
 
-    console.log(postProductsRepository);
+    location.reload();
 }
