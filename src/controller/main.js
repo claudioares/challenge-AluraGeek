@@ -1,17 +1,16 @@
 import { MethodsProductApi } from "../server/product-server-api.js";
-
 const productContainer = document.getElementById("data___product");
 
 
 
 export class CreatedCardProducts {
     constructor(){
-        const getApi = new MethodsProductApi();
-        this.productDataRepository = getApi.GETApiServer();
+        const repositorie = new MethodsProductApi();
+        this.productDataRepository = repositorie.GETApiServer();
     }
 
 
-    creatCard (title, image, description, price) {
+    creatCard (id, title, image, description, price) {
         const cardProduct = document.createElement('div');
         cardProduct.classList.add('card');
         cardProduct.innerHTML = `
@@ -30,13 +29,25 @@ export class CreatedCardProducts {
                         <p>${price}</p>
                     </div>
                     <div class="image__trash">
-                        <img src="assets/trash.svg" alt="icon trash">
+                        <img class="trash__icon" src="assets/trash.svg" alt="icon trash">
                     </div>
                 </div>
             </div>
         `
 
         productContainer?.appendChild(cardProduct);
+        cardProduct.addEventListener('click', async (event)=> {
+            if (event.target.classList.contains('trash__icon')) {
+                event.preventDefault();
+                const repositorie = new MethodsProductApi();
+
+                // deletando o produto
+                await repositorie.DELETEApiServer(id);
+
+                return 
+            }
+        });
+
         return productContainer;
     }
 
@@ -46,7 +57,7 @@ export class CreatedCardProducts {
         try {
 
             products.forEach(product => {
-                this.creatCard(product.title, product.image, product.description, product.price)
+                this.creatCard(product.id, product.title, product.image, product.description, product.price)
             });
             
         } catch (error) {
@@ -62,4 +73,4 @@ function render () {
 }
 
 render();
-const sendButton = document.getElementById("send__button");
+

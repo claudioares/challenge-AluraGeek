@@ -21,4 +21,20 @@ export class MethodsProductApi {
                 console.log(erro)
             })
     }
+
+    async DELETEApiServer (id) {
+        return await fetch('https://challenge-alurageek-api.onrender.com/deleteproducts', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id:id
+            })
+        })
+            .then(response => response.json())
+            .catch(erro => {
+                console.log(erro)
+            })
+    }
 }

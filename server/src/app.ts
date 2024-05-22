@@ -2,6 +2,7 @@ import fastify, { FastifyInstance } from "fastify"
 import cors from "@fastify/cors";
 import { ListProducts } from "./routers/list.products";
 import { CreteProducts } from "./routers/create.products";
+import { DeleteProducts } from "./routers/delete.products";
 
 
 export class App {
@@ -26,5 +27,6 @@ export class App {
 
         this.app.register(ListProducts)
         this.app.register(CreteProducts)
+        this.app.register(DeleteProducts)
     }
 }
