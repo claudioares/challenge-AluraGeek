@@ -15,4 +15,7 @@ export interface IEditQueryType {
 
 export interface IEditProdictsType {
     newTitle: string;
+    newImage: string;
+    newDescription: string;
+    newPrice: string;
 }

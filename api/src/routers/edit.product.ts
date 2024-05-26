@@ -7,7 +7,7 @@ export async function EditProduct(app: FastifyInstance) {
 
     app.put("/edit/id", async (request, reply) => {
 
-        const { newTitle }:IEditProdictsType = request.body as IEditProdictsType;
+        const data:IEditProdictsType = request.body as IEditProdictsType;
         const { id }: IEditQueryType = request.query as IEditQueryType;
 
         try {
@@ -17,7 +17,10 @@ export async function EditProduct(app: FastifyInstance) {
                     id
                 },
                 data: {
-                    title:newTitle
+                    title:data.newTitle,
+                    image:data.newImage,
+                    description:data.newDescription,
+                    price:data.newPrice
                 }
             });
 
