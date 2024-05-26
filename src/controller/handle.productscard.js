@@ -3,7 +3,7 @@ const productContainer = document.getElementById("data___product");
 
 
 
-export class CreatedCardProducts {
+export class HandleProductsCard {
     constructor(){
         const repositorie = new MethodsProductApi();
         this.productDataRepository = repositorie.GETApiServer();
@@ -37,6 +37,7 @@ export class CreatedCardProducts {
 
         productContainer?.appendChild(cardProduct);
 
+        // Deletando produtos caso click na lixeira
         cardProduct.addEventListener('click', async (event)=> {
             if (event.target.classList.contains('trash__icon')) {
                 event.preventDefault();
@@ -65,13 +66,7 @@ export class CreatedCardProducts {
             console.log(error)
         }
 
-    }
-}
+    };
 
-function render () {
-    const card = new CreatedCardProducts;
-    card.renderCard();
-}
-
-render();
+};
 
