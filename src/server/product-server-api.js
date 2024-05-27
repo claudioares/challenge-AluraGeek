@@ -36,7 +36,7 @@ export class MethodsProductApi {
                 newPrice:data.price
             }),
         })
-        .then(response => console.log(response))
+        .then(response => {return response.status})
         .catch(erro => {return erro})   
     }
     async DELETEApiServer (id) {

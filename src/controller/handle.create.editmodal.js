@@ -69,7 +69,26 @@ export default function handleCreateEditModal (id, title, image, description, pr
             const repositorie = new MethodsProductApi();
             const responseRepository = await repositorie.PutApiServer(dataFormEditProduct);
 
-            console.log("RESPOSTA DO SERVIDOR", responseRepository)
+            if(responseRepository === 201) {
+                containerModal.classList.remove("edit__modal__products");
+                containerModal.classList.add("div__none")
+                containerModal.removeChild(divFrom);
+                location.reload();
+                return;
+            } else {
+                const erroMessege = document.createElement("div");
+                erroMessege.classList.add("error__modal__info");
+                erroMessege.innerHTML = `
+                    <span>Erro ao atualizar o produto. Tente mais tarde!</span>
+                `
+                const bodyProject = document.querySelector('body');
+                bodyProject.appendChild(erroMessege);
+
+                setTimeout(()=>{
+                    bodyProject.removeChild(erroMessege);
+                }, 3000)
+            }
+
         }
     })
 

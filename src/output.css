@@ -923,6 +923,23 @@ video {
   display: none;
 }
 
+/* Modal de aviso de erro na requisição */
+
+.error__modal__info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 18% auto;
+  height: auto;
+  background-color: #e2b55c;
+  color: rgb(161, 4, 4);
+  padding: 0.8rem 2rem;
+  border-radius: 0.8rem;
+  bottom: 5%;
+  right: 3%;
+}
+
 .hover\:opacity-90:hover {
   opacity: 0.9;
 }
