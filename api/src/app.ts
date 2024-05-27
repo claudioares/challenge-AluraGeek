@@ -22,7 +22,7 @@ export class App {
 
   register() {
     this.app.register(cors, {
-      origin: "https://challenge-alura-geek-theta.vercel.app/",
+      origin: "https://challenge-alura-geek-theta.vercel.app",
       methods: ["PUT", "POST", "DELETE", "GET"],
     });
 
