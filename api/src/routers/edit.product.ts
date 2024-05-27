@@ -7,6 +7,7 @@ export async function EditProduct(app: FastifyInstance) {
 
     app.put("/edit/id", async (request, reply) => {
 
+
         const data:IEditProdictsType = request.body as IEditProdictsType;
         const { id }: IEditQueryType = request.query as IEditQueryType;
 

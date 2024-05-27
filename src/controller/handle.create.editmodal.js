@@ -69,7 +69,7 @@ export default function handleCreateEditModal (id, title, image, description, pr
             const repositorie = new MethodsProductApi();
             const responseRepository = await repositorie.PutApiServer(dataFormEditProduct);
 
-            console.log(responseRepository)
+            console.log("RESPOSTA DO SERVIDOR", responseRepository)
         }
     })
 
