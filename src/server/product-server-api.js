@@ -22,6 +22,23 @@ export class MethodsProductApi {
             })
     }
 
+    async PutApiServer (data) {
+
+        return await fetch(`https://challenge-alurageek-api.onrender.com/edit/id?id=${data.id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: {
+                newTitle:data.title,
+                newImage:data.image,
+                newDescription:data.description,
+                newPrice:data.price
+            },
+        })
+        .then(response => response)
+        .catch(erro => {return erro})
+    }
     async DELETEApiServer (id) {
         return await fetch('https://challenge-alurageek-api.onrender.com/deleteproducts', {
             method: 'DELETE',

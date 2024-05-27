@@ -1,4 +1,5 @@
 import { MethodsProductApi } from "../server/product-server-api.js";
+import handleCreateEditModal from "./handle.create.editmodal.js";
 const productContainer = document.getElementById("data___product");
 
 
@@ -28,8 +29,9 @@ export class HandleProductsCard {
                         <span>R&#36;</span>
                         <p>${price}</p>
                     </div>
-                    <div class="image__trash">
+                    <div class="image__trash__edit">
                         <img class="trash__icon" src="assets/trash.svg" alt="icon trash">
+                        <img class="edit__icon" src="assets/edit-icon.gif" alt="icon edit">
                     </div>
                 </div>
             </div>
@@ -45,9 +47,18 @@ export class HandleProductsCard {
 
                 // deletando o produto
                 await repositorie.DELETEApiServer(id);
+                location.reload();
             }
-            location.reload();
             return 
+        });
+
+        cardProduct.addEventListener('click', (event)=> {
+            if (event.target.classList.contains('edit__icon')) {
+                event.preventDefault();
+                handleCreateEditModal(id, title, image, description, price);
+                return;
+            }
+            return;
         });
 
         return productContainer;
