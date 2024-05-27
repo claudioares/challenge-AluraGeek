@@ -20,9 +20,9 @@ export class HandleProductsCard {
             </div>
         
             <div class="info__products">
-                <h1 class="product__name">${title}</h1>
+                <h1 class="product__name">${title.split('').slice(0, 30).join('').concat('...')}</h1>
 
-                <p class="description__">${description.split(' ').slice(0, 9).join(' ').concat('...')}</p>
+                <p class="description__">${description.split('').slice(0, 80).join('').concat('...')}</p>
 
                 <div class="info__container">
                     <div class="price__">
