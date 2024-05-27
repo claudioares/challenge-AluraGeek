@@ -23,7 +23,7 @@ export class App {
     register(){
         this.app.register(cors, {
             origin: "*",
-            methods: ['POST', 'DELETE', 'GET']
+            methods: ['POST', 'DELETE', 'GET', 'PUT']
         })
 
         this.app.register(ListProducts)

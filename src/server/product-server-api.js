@@ -36,8 +36,8 @@ export class MethodsProductApi {
                 newPrice:data.price
             },
         })
-        .then(response => response)
-        .catch(erro => {return erro})
+        .then(response => console.log(response))
+        .catch(erro => {return erro})   
     }
     async DELETEApiServer (id) {
         return await fetch('https://challenge-alurageek-api.onrender.com/deleteproducts', {
